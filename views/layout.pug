@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    block stylesheets
+      link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    header
+      if Array.isArray(messages) && messages.length > 0
+        #messages
+          ul
+            each message in messages
+              li
+                span= message.title
+                span= message.content
+
+    block content
+
+    footer
+      p= version

@@ -1,0 +1,14 @@
+extends layout
+
+block append stylesheets
+  link(rel='stylesheet', href='/stylesheets/home.css')
+
+block content
+  h1= title
+  p Bonjour to #{title}
+
+  form(method='post', action='/testform', enctype='multipart/form-data')
+    input(type='text', name='firstname', placeholder='Prénom')
+    input(type='text', name='lastname', placeholder='Nom')
+    input(type='file', name='photo')
+    button(type='submit') Envoyer
